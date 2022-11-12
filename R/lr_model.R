@@ -1,14 +1,14 @@
-#' Linear Regression Model
+#' Fitting Linear Models
 #'
 #' lr is a custom function designed to fit linear models. It works for both simple linear regression and multiple
 #' linear regression and generates the same results as lm function from R.
 #'
-#' @param formula A formula with the form of response ~ predictors.
-#' @param source A R data frame that contains the source data.
-#' @param intercept An indicator for determining whether the model should be fit with or without intercept.The
-#' default value of intercept is TRUE.
+#' @param formula an object of class "formula" with the form of response ~ predictors
+#' @param source a data frame containing tha variables in the formula (model)
+#' @param intercept an indicator for determining whether the model should be fit with or without intercept.The
+#' default value of intercept is TRUE
 #'
-#' @return A list that contains the attributes of the fitted model. All of the attributes can be visited by using $.
+#' @return a list that contains the attributes of the fitted model. All of the attributes can be accessed by $.
 #'
 #' @examples
 #' lr(mpg ~ hp + wt, mtcars)

@@ -2,6 +2,7 @@
 # lrmodel
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/imingrui/lrmodel/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/imingrui/lrmodel/actions/workflows/R-CMD-check.yaml)
 [![codecov](https://codecov.io/gh/imingrui/lrmodel/branch/master/graph/badge.svg)](https://codecov.io/gh/imingrui/lrmodel)
 <!-- badges: end -->
 
