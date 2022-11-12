@@ -2,20 +2,20 @@
 % Please edit documentation in R/lr_model.R
 \name{lr}
 \alias{lr}
-\title{Linear Regression Model}
+\title{Fitting Linear Models}
 \usage{
 lr(formula, source, intercept = TRUE)
 }
 \arguments{
-\item{formula}{A formula with the form of response ~ predictors.}
+\item{formula}{an object of class "formula" with the form of response ~ predictors}
 
-\item{source}{A R data frame that contains the source data.}
+\item{source}{a data frame containing tha variables in the formula (model)}
 
-\item{intercept}{An indicator for determining whether the model should be fit with or without intercept.The
-default value of intercept is TRUE.}
+\item{intercept}{an indicator for determining whether the model should be fit with or without intercept.The
+default value of intercept is TRUE}
 }
 \value{
-A list that contains the attributes of the fitted model. All of the attributes can be visited by using $.
+Returns a list that contains the attributes of the fitted model. All of the attributes can be accessed by $.
 }
 \description{
 lr is a custom function designed to fit linear models. It works for both simple linear regression and multiple

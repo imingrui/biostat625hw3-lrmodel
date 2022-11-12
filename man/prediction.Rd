@@ -16,7 +16,7 @@ Predict the value based on the input data and trained linear regression model.
 }
 \examples{
 fitted_model <- lr(mpg ~ hp + wt, mtcars)
-new_data <- data.frame(hp = c(110), wt = c(3.521)
+new_data <- data.frame(hp = c(110), wt = c(3.521))
 prediction(fitted_model, new_data)
 
 }

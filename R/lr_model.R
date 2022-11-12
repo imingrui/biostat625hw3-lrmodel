@@ -8,7 +8,7 @@
 #' @param intercept an indicator for determining whether the model should be fit with or without intercept.The
 #' default value of intercept is TRUE
 #'
-#' @return a list that contains the attributes of the fitted model. All of the attributes can be accessed by $.
+#' @return Returns a list that contains the attributes of the fitted model. All of the attributes can be accessed by $.
 #'
 #' @examples
 #' lr(mpg ~ hp + wt, mtcars)
@@ -158,7 +158,6 @@ summary_lr <- function(lr_model) {
 #' @examples
 #' fitted_model <- lr(mpg ~ hp + wt, mtcars)
 #' new_data <- data.frame(hp = c(110), wt = c(3.521))
-#' prediction(fitted_model, new_data)
 #'
 #' @export
 #'
