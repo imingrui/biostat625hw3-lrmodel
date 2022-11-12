@@ -66,5 +66,4 @@ anova <- function(formula, source) {
   cat("\n")
   cat("Residual standard error:", residual_std_err)
   cat("\n\n")
-
 }

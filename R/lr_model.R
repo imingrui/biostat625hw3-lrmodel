@@ -17,6 +17,7 @@
 #'
 #' @export
 #'
+
 lr <- function(formula, source, intercept=TRUE) {
   # remove NA rows
   source = na.omit(source)
@@ -106,8 +107,6 @@ lr <- function(formula, source, intercept=TRUE) {
                         predictors = predictors,
                         samples = nrow(source),
                         intercept = intercept)))
-
-
 }
 
 #' Display the summary of a lr model
@@ -123,7 +122,7 @@ lr <- function(formula, source, intercept=TRUE) {
 #'
 #' @export
 #'
-#'
+
 summary_lr <- function(lr_model) {
   # print the formula
   cat("\nCall:\n")
@@ -147,7 +146,6 @@ summary_lr <- function(lr_model) {
   cat("\nMultiple R-squared:", paste0(round(lr_model$r_square, 4), ", "), "Adjusted R-squared: ", round(lr_model$adjusted_R_square, 4), "\n")
   cat("F-statistic: ", round(lr_model$f_static, 2), "on", length(lr_model$predictor), "and",
       DF, "DF, ", "p-value: ", lr_model$p_val_f_static, "\n\n")
-
 }
 
 #' Model Predictions
@@ -164,7 +162,7 @@ summary_lr <- function(lr_model) {
 #'
 #' @export
 #'
-#'
+
 prediction <- function(lr_model, new_data) {
   # intercept is enabled
   X = matrix()
