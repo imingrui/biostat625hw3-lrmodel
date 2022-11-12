@@ -2,6 +2,7 @@
 # lrmodel
 
 <!-- badges: start -->
+[![codecov](https://codecov.io/gh/imingrui/lrmodel/branch/master/graph/badge.svg)](https://codecov.io/gh/imingrui/lrmodel)
 <!-- badges: end -->
 
 lrmodel package is designed to replicate existing R functions, `lm(...)` and `anova(...)`. With the goal of obtaining identical results with those functions, it aims to  
@@ -11,7 +12,7 @@ lrmodel package is designed to replicate existing R functions, `lm(...)` and `an
 ``` r
 # install lrmodel package
 install.packages('devtools')
-devtools::install_github('some name', build_vignettes = T)
+devtools::install_github('imingrui/lrmodel', build_vignettes = T)
 # use lrmodel package
 library("lrmodel")
 # view vignettes
