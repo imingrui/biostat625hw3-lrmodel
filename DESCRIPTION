@@ -1,0 +1,19 @@
+Package: lrmodel
+Type: Package
+Title: linear regression and analysis of variance
+Version: 1.0.0
+Author: Mingrui Li
+Maintainer: Mingrui Li <imingrui@umich.edu>
+Description: More about what it does (maybe more than one line)
+    Use four spaces when indenting paragraphs within the Description.
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.1
+VignetteBuilder: knitr
