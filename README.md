@@ -20,7 +20,7 @@ library("lrmodel")
 browseVignettes("lrmodel")
 ```
 
-## Usage
+## Basic Usage
 ``` r
 library(lrmodel)
 lr(mpg ~ hp + wt, mtcars)
@@ -32,7 +32,6 @@ lr(mpg ~ hp + wt, mtcars)
 #Coefficients:
 # (Intercept)          hp        wt
 #    37.22727 -0.03177295 -3.877831
-
 
 anova(mpg ~ hp + wt, mtcars)
 
@@ -48,5 +47,5 @@ anova(mpg ~ hp + wt, mtcars)
 ```
 
 # More
-If you encounter a bug, please contact me via [email](mailto:imingrui@umich.edu).
+If you encounter a bug, please contact me via [EMAIL](mailto:imingrui@umich.edu)!
 

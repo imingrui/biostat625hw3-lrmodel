@@ -7,9 +7,9 @@
 anova(formula, source)
 }
 \arguments{
-\item{formula}{A formula with the form of response ~ predictors.}
+\item{formula}{an object of class "formula" with the form of response ~ predictors}
 
-\item{source}{A R data frame that contains the source data.}
+\item{source}{a data frame containing all the variables in the formula}
 }
 \description{
 Generate ANOVA table of a fitted model.

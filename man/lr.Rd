@@ -9,21 +9,40 @@ lr(formula, source, intercept = TRUE)
 \arguments{
 \item{formula}{an object of class "formula" with the form of response ~ predictors}
 
-\item{source}{a data frame containing tha variables in the formula (model)}
+\item{source}{a data frame containing all the variables in the formula}
 
-\item{intercept}{an indicator for determining whether the model should be fit with or without intercept.The
+\item{intercept}{an indicator for determining whether the model should be fitted with or without intercept.The
 default value of intercept is TRUE}
 }
 \value{
-Returns a list that contains the attributes of the fitted model. All of the attributes can be accessed by $.
+Returns a list containing the following attributes of the fitted model.
+\itemize{
+\item coefficients, a vector of coefficients
+\item call, the matched call
+\item residuals, a matrix of residuals
+\item r_square, R squared value
+\item adjusted_R_square, adjusted R squared value
+\item std_err, standard error
+\item t_value, T value
+\item P_val_t_value, P Value of T value
+\item f_static, F-statistic
+\item p_val_f_static, P value of F-statistic
+\item predictors, names of all predictors
+\item samples, number of samples being used
+\item intercept, whether the model fitted with intercept
+}
 }
 \description{
-lr is a custom function designed to fit linear models. It works for both simple linear regression and multiple
-linear regression and generates the same results as lm function from R.
+\emph{lr} is a custom function designed to fit linear models. It works for both simple linear regression and multiple
+linear regression and generates numeric attributes of the fitted model
 }
 \examples{
+
+## run and find a fitted model
 lr(mpg ~ hp + wt, mtcars)
 fitted_model <- lr(mpg ~ hp + wt, mtcars)
+
+## access the R squared value of the fitted model
 fitted_model$r_square
 
 }
