@@ -10,3 +10,11 @@ test_that("anova function obtains the same output as aov function", {
   expect_equal(round(as.double(SSE_hp), 4), round(g[[1]][,2][2], 4))
   expect_equal(round(as.double(SSE_wt), 4), round(g[[1]][,2][3], 4))
 })
+
+test_that("invalid predictor appears", {
+  tryCatch( {
+    lstop_ <- lr(mpg ~ hp + abc, mtcars)
+  }, error = function(e) {
+    expect_equal("true","true")
+  })
+})

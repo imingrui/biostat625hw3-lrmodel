@@ -5,8 +5,6 @@
 #'
 #' @param formula an object of class "formula" with the form of response ~ predictors
 #' @param source a data frame containing all the variables in the formula
-#' @param intercept an indicator for determining whether the model should be fitted with or without intercept.The
-#' default value of intercept is TRUE
 #'
 #' @return Returns a list containing the following attributes of the fitted model.
 #' * coefficients, a vector of coefficients
@@ -21,7 +19,6 @@
 #' * p_val_f_static, P value of F-statistic
 #' * predictors, names of all predictors
 #' * samples, number of samples being used
-#' * intercept, whether the model fitted with intercept
 #'
 #' @examples
 #'
@@ -35,7 +32,7 @@
 #' @export
 #'
 
-lr <- function(formula, source, intercept=TRUE) {
+lr <- function(formula, source) {
   # remove NA rows
   source = na.omit(source)
   # get all Xs
@@ -51,10 +48,7 @@ lr <- function(formula, source, intercept=TRUE) {
   # build matrix for Y
   targets = as.character(formula[[2]])
   Y = as.matrix(source[targets], nrow(source), 1)
-
-  if (intercept) {
-    X = cbind(rep(1, nrow(source)), X)
-  }
+  X = cbind(rep(1, nrow(source)), X)
   # solve equations for coefficients
   a = t(X) %*% X
   b = t(X) %*% Y
@@ -62,11 +56,7 @@ lr <- function(formula, source, intercept=TRUE) {
 
   # re-name every property
   rownames(coeff) = c("")
-  if (intercept) {
-    colnames(coeff) = c("(Intercept)", predictors)
-  } else {
-    colnames(coeff) = predictors
-  }
+  colnames(coeff) = c("(Intercept)", predictors)
 
   # calculate predicated Ys
   Y_pred = X %*% t(coeff)
@@ -122,8 +112,7 @@ lr <- function(formula, source, intercept=TRUE) {
                         f_static = f_static,
                         p_val_f_static = p_val_f_static,
                         predictors = predictors,
-                        samples = nrow(source),
-                        intercept = intercept)))
+                        samples = nrow(source))))
 }
 
 #' Display the summary of a lr model
@@ -185,13 +174,9 @@ summary_lr <- function(lr_model) {
 prediction <- function(lr_model, new_data) {
   # intercept is enabled
   X = matrix()
-  if (lr_model$intercept) {
-    # insert the intercept column
-    new_data = cbind(rep(1, nrow(new_data)), new_data)
-    X = as.matrix(new_data, 1, length(lr_model$predictor) + 1)
-  } else {
-    X = as.matrix(new_data, 1, length(lr_model$predictor))
-  }
+  # insert the intercept column
+  new_data = cbind(rep(1, nrow(new_data)), new_data)
+  X = as.matrix(new_data, 1, length(lr_model$predictor) + 1)
   pred = X %*% t(lr_model$coefficients)
   return(t(pred))
 }
