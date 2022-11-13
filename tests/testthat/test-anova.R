@@ -13,7 +13,7 @@ test_that("anova function obtains the same output as aov function", {
 
 test_that("invalid predictor appears", {
   tryCatch( {
-    lstop_ <- lr(mpg ~ hp + abc, mtcars)
+    anova_stop <- anova(mpg ~ hp + abc, mtcars)
   }, error = function(e) {
     expect_equal("true","true")
   })
