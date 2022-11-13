@@ -6,7 +6,7 @@
 [![codecov](https://codecov.io/gh/imingrui/lrmodel/branch/master/graph/badge.svg)](https://codecov.io/gh/imingrui/lrmodel)
 <!-- badges: end -->
 
-lrmodel package is designed to replicate existing R functions, `lm(...)` and `anova(...)`. With the goal of obtaining identical results with those functions, it aims to  
+lrmodel package is designed to replicate a simplified version of existing R functions, `lm(...)`, `summary(...)`, `predict(...)`, and `anova(...)`. It currently works for both simple and multiple linear regression and is able to conduct ANOVA on a given data set.
 
 ## Installation
 
@@ -16,8 +16,6 @@ install.packages('devtools')
 devtools::install_github('imingrui/lrmodel', build_vignettes = T)
 # use lrmodel package
 library("lrmodel")
-# view vignettes
-browseVignettes("lrmodel")
 ```
 
 ## Basic Usage
@@ -47,5 +45,7 @@ anova(mpg ~ hp + wt, mtcars)
 ```
 
 # More
-If you encounter a bug, please contact me via [EMAIL](mailto:imingrui@umich.edu)!
+`help(lr)`, `help(summary_lr)`, `help(prediction)`, `help(anova)` and `browseVignettes("lrmodel")` are great resources for getting additional help!
+
+If you encounter a bug, please do not hesitate to contact me via [EMAIL](mailto:imingrui@umich.edu)!
 

@@ -19,19 +19,19 @@ library(lrmodel)
 ```
 
 ## Introduction
-lrmodel package is designed to fit lineas models for both simple and multiple linear regression as well as conduct ANOVA. 
+*lrmodel* package is designed to fit linear models for both simple and multiple linear regressions as well as conduct ANOVA on a given data set. 
 
 ## Example of running lr function
 ```{r}
 m <- lr(mpg ~ hp + wt, mtcars)
 ```
 
-We can check out the detailed attributes by using `summary_lr(...)` function.
+We can check out the detailed information by `summary_lr(...)` function.
 ```{r}
 summary_lr(m)
 ```
 
-Furthermore, we have `prediction()` function which enables you to further predicting any new data with the trained model.
+Additionally, it has `prediction(...)` function which enables you to further predicting any new data with the trained model.
 
 ```{r}
 new_data <- data.frame(hp = c(110), wt = c(3.521))
@@ -39,40 +39,40 @@ p <- prediction(m, new_data)
 ```
 
 ## Example of conducting ANOVA
-We can obtain the ANOVA table by calling `anova(...)` function
+We can obtain the ANOVA table by calling `anova(...)` function.
 ```{r}
 a <- anova(mpg ~ hp + wt, mtcars)
 ```
 
 ## Evalution
-lrmodel package is evaluated with `lm(...)` function and `aov(...)` function respectively in terms of efficiency and correctness.
+*lrmodel* package is evaluated by comparing with `lm(...)` function and `aov(...)` function respectively in terms of efficiency and correctness.
 ```{r}
 start <- Sys.time()
 lr(mpg ~ hp + wt, mtcars)
 stop <- Sys.time()
 execution <- stop - start
-print(paste("lr function execution:", execution[[1]]))
+print(paste("lr function execution time:", execution[[1]]))
 
 start <- Sys.time()
 lm(mpg ~ hp + wt, mtcars)
 stop <- Sys.time()
 execution <- stop - start
-print(paste("lm function execution:", execution[[1]]))
+print(paste("lm function execution time:", execution[[1]]))
 
 ```
-We observe that the two functions have identical output and negligible run time difference.
+We observed that the two functions have identical outputs and negligible run time difference.
 
 ```{r}
 start <- Sys.time()
 anova(mpg ~ hp + wt, mtcars)
 stop <- Sys.time()
 execution <- stop - start
-print(paste("anova function execution:", execution[[1]]))
+print(paste("anova function execution time:", execution[[1]]))
 
 start <- Sys.time()
 aov(mpg ~ hp + wt, mtcars)
 stop <- Sys.time()
 execution <- stop - start
-print(paste("aov function execution:", execution[[1]]))
+print(paste("aov function execution time:", execution[[1]]))
 ```
-We observe that function `anova(...)` and function `aov(...)` has the similar output and negligible run time difference.
+We observed that function `anova(...)` and function `aov(...)` have highly similar outputs and negligible run time difference.
