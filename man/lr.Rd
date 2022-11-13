@@ -4,15 +4,12 @@
 \alias{lr}
 \title{Fitting Linear Models}
 \usage{
-lr(formula, source, intercept = TRUE)
+lr(formula, source)
 }
 \arguments{
 \item{formula}{an object of class "formula" with the form of response ~ predictors}
 
 \item{source}{a data frame containing all the variables in the formula}
-
-\item{intercept}{an indicator for determining whether the model should be fitted with or without intercept.The
-default value of intercept is TRUE}
 }
 \value{
 Returns a list containing the following attributes of the fitted model.
@@ -29,7 +26,6 @@ Returns a list containing the following attributes of the fitted model.
 \item p_val_f_static, P value of F-statistic
 \item predictors, names of all predictors
 \item samples, number of samples being used
-\item intercept, whether the model fitted with intercept
 }
 }
 \description{
